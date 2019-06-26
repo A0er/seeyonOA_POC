@@ -35,7 +35,7 @@ def start(url):
         return url
 
 def read_file(path):
-    if not os.path.exists("urls.txt"):
+    if not os.path.exists(path):
         print("Please check file.", path)
         return
     file = open(path, "r")
@@ -58,8 +58,9 @@ def main():
         paths = [input('[+] Please input path：')]
     for path in paths:
         path = glob.glob(path)
-        for url in path:
-            urls = read_file(url)
+        for p in path:
+            urls = read_file(p)
+            print(p)
             pool.map(start, [url for url in urls])
 
 if __name__ == "__main__":
