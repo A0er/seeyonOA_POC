@@ -8,6 +8,8 @@
 using: python3 poc.py urls.txt
 需要请求库
 
+using: python3 command.py 存在漏洞的url
+
 
 
 
